@@ -15,11 +15,8 @@ export default class GifListContainer extends React.Component{
         fetch(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC&rating=g`) 
         .then(resp => resp.json())
         .then(({data}) => {
-            // debugger;
-            // While loop for first 3 gifs?
-            let splicedData = data.slice(0, 3)
-
-            this.setState({ gifsArray: splicedData.map(gif => gif.images.original.url) })
+            let slicedData = data.slice(0, 3)
+            this.setState({ gifsArray: slicedData.map(gif => gif.images.original.url) })
         })
     }
     
