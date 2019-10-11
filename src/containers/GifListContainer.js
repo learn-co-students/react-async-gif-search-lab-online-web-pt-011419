@@ -17,9 +17,9 @@ export default class GifListContainer extends React.Component{
         .then(({data}) => {
             // debugger;
             // While loop for first 3 gifs?
+            let splicedData = data.slice(0, 3)
 
-            this.setState({ gifsArray: data.map(gif => gif.images.original.url) })
-            // debugger;
+            this.setState({ gifsArray: splicedData.map(gif => gif.images.original.url) })
         })
     }
     
@@ -30,8 +30,8 @@ export default class GifListContainer extends React.Component{
     render(){
         return (
         <div>
-            <GifList gifs={this.state.gifsArray} />
             <GifSearch fetchGifs={this.fetchGifs} />
+            <GifList gifs={this.state.gifsArray} />
         </div>
         )
     }

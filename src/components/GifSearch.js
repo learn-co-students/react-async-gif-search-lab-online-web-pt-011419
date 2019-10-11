@@ -18,7 +18,7 @@ export default class GifSearch extends React.Component{
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.query} onChange={e => this.setState({query: e.target.value})} />
+                    Search for Gifs: <input type="text" value={this.state.query} onChange={e => this.setState({query: e.target.value})} />
                 </form>
             </div>
         ) 
