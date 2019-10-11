@@ -5,7 +5,7 @@ function GifList (props) {
 
     return (
         <div>
-            Testing Props: {props.gifs}
+            {props.gifs}.map (gif => (gif))
         </div>
     )
 }
